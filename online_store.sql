@@ -1,7 +1,7 @@
 SELECT * FROM Customers;  
 SELECT
     Customers.customer_name,
-    SUM(Orders.quantity) AS total_spent
+   SUM(products.price * orders.quantity) AS total_spent
 FROM Customers
 JOIN Orders
     ON Customers.customer_id = Orders.customer_id
