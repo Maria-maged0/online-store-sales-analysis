@@ -10,7 +10,7 @@ ORDER BY total_spent DESC;
 
 SELECT
     products.product_name,
-    SUM(orders.quantity) AS total_quantity
+    SUM(products.price * orders.quantity) AS total_spent AS total_quantity
 FROM products
 JOIN orders
     ON products.product_id = orders.product_id
